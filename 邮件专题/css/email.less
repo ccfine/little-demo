@@ -1,0 +1,218 @@
+@fontColor: #D00E31;
+@backgroundColor: #F5F5F5;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "微软雅黑";
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+#contianer {
+  width: 750px;
+  margin: 0 auto;
+
+  .font-color {
+    color: @fontColor;
+  }
+  .gif {
+    width: 680px;
+    height: 500px;
+    margin-top: 30px;
+  }
+  #header {
+    height: 70px;
+    line-height: 70px;
+    padding: 0 35px;
+   
+    >ul {
+      float: right;
+      width: 440px;
+      font-size: 18px;
+      display: flex;
+      justify-content: space-between;
+
+      .nav:hover {
+        color: @fontColor; 
+      }
+    }
+  }
+  #banner {
+    height: 267px;
+    text-align: center;
+    padding-top: 65px;
+    background-image: url("../images/春节背景.png");
+    background-size: cover;
+
+    >span {
+      font-size: 26px;
+    }
+    >h1 {
+      font-size: 56px;
+      font-family: "宋体";
+    }
+  }
+  #envelope {
+    width: 726px;
+    height: 770px;
+    margin: -50px auto 0;
+    padding: 45px 53px 0;
+    font-size: 20px;
+    background-image: url("../images/信封.png");
+    background-size: cover;
+
+    .edit {
+      color: #2F74E3;
+    }
+    >p {
+      line-height: 40px;
+    }
+    >ul {
+      margin: 20px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+    >div {
+      height: 255px;
+      margin-top: 10px;
+      padding: 30px 40px;
+      border: 1px solid @fontColor;
+      background-color: #FAFAFA;
+
+      >ul {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+      >div {
+        margin: 30px 0 20px;
+        border-top: 1px solid #EBEBEB;
+      }
+      >p {
+        font-size: 18px;
+      }
+    }
+  }
+  #esoterica {
+    height: 90px;
+    line-height: 70px;
+    color: #fff;
+    text-align: center;
+    background-image: url("../images/必看秘籍背景38.png");
+    background-size: cover;
+
+    >strong {
+      display: inline-block;
+      margin: 0 30px;
+      font-size: 34px;
+    }
+  }
+  .content {
+    padding: 35px;
+    font-size: 20px;
+
+    >h1 {
+      font-size: 30px;
+
+      >strong {
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        margin-right: 10px;
+        transform: translateY(-3px);
+        font-size: 18px;
+        color: #fff;
+        background-color: @fontColor;
+      }
+    }
+    >ul {
+      >li {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+
+        >b {
+          display: inline-block;
+          width: 26px;
+          height: 26px; 
+          line-height: 26px;
+          text-align: center;
+          margin-right: 10px;
+          font-size: 15px;
+          transform: translateY(2px);
+          border: 1px solid @fontColor;
+          border-radius: 50%;
+        }
+        >P {
+          width: 642px;
+          line-height: 30px;
+        }
+        >ul {
+          width: 100%;
+          display: flex;
+          justify-content: space-around;
+          margin-top: 15px;
+
+          >li {
+            >span {
+              margin-left: 5px;
+              color: #666;
+            }
+          }
+        }
+      }
+    }
+  }
+  #suggestion {
+    background-color: @backgroundColor; 
+  }
+  #dynamic {
+    >p {
+      padding: 5px 0 10px 38px;
+    }
+    >ul {
+      >li {
+        display: flex;
+        flex-wrap: nowrap;
+        padding: 15px;
+        background-color: @backgroundColor;
+
+        >div {
+          padding: 25px 0 0 23px;
+
+          >h1{
+            font-size: 24px;
+            font-weight: normal;
+            margin-bottom: 10px;
+          }
+          >p {
+            font-size: 18px;
+            line-height: 26px;
+            color: #585858;
+          }
+        }
+      }
+    }
+  }
+  #foot {
+    height: 168px;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 17px;
+    color: #888;
+    background-image: url("../images/底部背景.png");
+
+   >p:first-child {
+     font-size: 22px;
+     margin-bottom: 15px;
+   }
+  }
+}

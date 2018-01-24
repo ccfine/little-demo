@@ -1,0 +1,112 @@
+doctype html
+html
+  head
+    meta(http-equiv="content-type", content="text/html;charset=utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="author", content="cf")
+    title 邮件主题
+    link(rel="stylesheet", href="css/email.css")
+    script(src="https://cdn.bootcss.com/jquery/3.2.0/jquery.min.js")
+    script(src="js/email.js")   
+  body
+    #contianer
+      #header 
+        img(src="images/logo.png", alt="TONTISA同天下")
+        ul
+          li.font-color 账号信息
+          - var navs = {系统学习方法: "#method", 反馈建议: "#suggestion", 最新动态: "#dynamic"}
+          each val, key in navs
+            li
+              a.nav(href="#{val}") #{key}
+      #banner
+        span.font-color 【小强ERP系统】
+        h1.font-color 开通通知
+      #envelope
+        p 
+          strong.edit 赵总
+          | ：
+        p 您好！
+        p 
+          | 我是您的
+          strong.edit 技术客服-黄文婷
+          | ，很高兴认识您。非常感谢贵司选择同天下的产品，以后将由我为您服务，解答与系统有关的一切问题。
+        p 
+          | 为了更好的为您量身定制培训课程，我们会在三个工作日内给您致电，需了解贵司的业务流程及您希望
+          | 系统主要辅助的工作内容，请您留意接听，感谢您的配合！
+        ul
+          li 我的联系方式
+          li 
+            | QQ： 
+            span.edit 2850672935
+          li
+            | 电话： 
+            span.edit 0755-89332966(分机204)
+        p.font-color 以下是贵公司的系统账号信息，请妥善保管
+        div
+          mixin info(obj)
+            ul
+              each val, key in obj
+                li 
+                  | #{key}：
+                  span&attributes(attributes) #{val}
+          +info({前台地址: "http://1486.op110.com.cn", 访问密码: "110"})(class="edit")
+          +info({后台地址: "http://1486.op110.com.cn"})(class="edit")
+          +info({登录账号: "admin(管理员账号)", 登录密码: "110"})(class="edit")
+          div
+          p.font-color
+            | 注意：此管理员账号只能用于开设员工账号，权限划分等系统管理的工作，
+            | 请不要做任何与业务相关的操作！
+      #esoterica
+        | 一
+        strong 必看秘籍
+        | 一
+      mixin list(obj)
+        each val, key in obj
+          li 
+            b&attributes(attributes) #{key}
+            p #{val}
+            if block
+              block
+      #method.content
+        mixin method(obj)
+          ul
+            each val, key in obj
+              li&attributes(attributes) 
+                | #{key}
+                span #{val}  
+        h1.font-color
+          strong 1
+          | 系统学习方式
+        ul
+          +list({"01": "登录系统后台，点击右上角【帮助中心】三种学习方式"})(class="font-color") 
+            +method({"001": "观看视频教程", "002": "使用指南", "003": "搜索问题的关键字"})(class="font-color")
+            .gif 
+              img(src="images/5.gif", width="100%", height="100%")
+          +list({"02": "下载操作指导文档（邮件附件压缩包）。", "03": "远程培训：联系您的客服，根据您的业务流程制定课程，预约远程培训时间", "04": "小强学院：不定期在全国各地举办脱产式培训，详情关注\"小强社区\"哦！"})(class="font-color")
+      #suggestion.content
+        h1.font-color
+          strong 2
+          | 系统建议及反馈方式
+        ul
+          +list({"01": "登录系统后台，点击右上角【在线反馈】，将您想反映的问题或建议提交工作人员于1个工作日内回复", "02": "小强社区（登录系统后点击右上角【小强社区】）", "03": "电话/微信/QQ联系您的客服哦！"})(class="font-color")
+        .gif
+          img(src="images/6.gif", width="100%", height="100%")
+      #dynamic.content
+        mixin dynamic(arr)
+          ul
+            each items in arr
+              li 
+                img(src="#{items[0]}", alt="二维码")
+                div
+                  h1 #{items[1]}
+                  p #{items[2]}
+        h1.font-color
+          strong 3
+          | 实时获取小强ERP及行业最新动态
+        p 请您和公司全体小伙伴扫一扫关注
+        +dynamic([["images/ERP服务号二维码.png", "小强ERP服务号", "提供小强系统最新升级功能介绍。小强用户绑定该微信号，可接受登录提醒、消息提醒和工单处理进度提醒等。"], ["images/旅助而二维码.png", "旅游人助手", "旅游人的精准营销平台，在线发布、查询旅游产品实时详情，并为您提供一手旅游批发及地接资源，满足营销和分销需求。"], ["images/同天下服务平台二维码.png", "同天下旅游业服务平台", "为您及时推送同天下企业及产品动态，提供旅行社智能办公资讯，同旅游人一起打天下。"]])
+      #foot
+        p.font-color 再次感谢您对同天下的信任与支持！顺祝商祺
+        p 深圳同天下科技有限公司
+        p 官网：http://www.op110.com
+        p 公司地址：深圳市龙岗区力嘉路108号2013文化创客园A312-14 

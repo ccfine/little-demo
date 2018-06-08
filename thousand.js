@@ -15,7 +15,7 @@ function thousand(num) {
   }
   return result;
 }
-thousand(1234567.89);
+thousand(1234567.1234567);
 
 
 var urlA = "A",

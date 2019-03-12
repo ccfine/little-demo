@@ -1,19 +1,23 @@
-* {
+*, *:before, *::before, *:after, *::after {
   margin: 0;
   padding: 0;
   font-size: 1.2rem;
   font-family: "微软雅黑";
   box-sizing: border-box;
 }
+
 html {
   font-size: 10px;
 }
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
+
 ul, ol {
   list-style-type: none;
 }
+
 a {
   text-decoration: none;
 }

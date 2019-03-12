@@ -35,6 +35,7 @@
 				}
 			}
 
+			//中序遍历
 			var inOrderTraversalNode = function (node) {
 				if (node !== null) {
 					inOrderTraversalNode(node.left)
@@ -43,6 +44,7 @@
 				}
 			}
 
+			//先序遍历
 			var preorderTraversalNode = function (node) {
 				if (node !== null) {
 					console.log(node.value)
@@ -51,6 +53,7 @@
 				}
 			}
 
+			//后序遍历
 			var postorderTraversalNode = function (node) {
 				if (node !== null) {
 					inOrderTraversalNode(node.left)
@@ -59,6 +62,43 @@
 				}
 			}
 
+			//最小节点
+			var findMinNode = function (node) {
+				if (node) {
+					if (node.left) {
+						findMinNode(node.left)
+					} else {
+						console.log(node.value)
+					}
+				}
+			}
+
+			//最大节点
+			var findMaxNode = function (node) {
+				if (node) {
+					if (node.right) {
+						findMaxNode(node.right)
+					} else {
+						console.log(node.value)
+					}
+				}
+			}
+
+			//查找节点
+			var findNode = function (node, value) {
+				if (node) {
+					if (node.value === value) {
+						console.log("节点" + value + "存在")
+					} else if (node.value > value) {
+						findNode(node.left, value)
+					} else if (node.value < value) {
+						findNode(node.right, value)
+					}
+				} else {
+					console.log("节点" + value + "不存在")
+				}
+			}
+			
 			//生成树
 			this.createTree = function (value) {
 				var newNode = new Node(value)
@@ -69,19 +109,28 @@
 				}
 			}
 
-			//中序遍历
 			this.inOrderTraversal = function () {
 				inOrderTraversalNode(tree)
 			}
 
-			//先序遍历
 			this.preorderTraversal = function () {
 				preorderTraversalNode(tree)
 			}
 
-			//后序遍历
 			this.postorderTraversal = function () {
 				postorderTraversalNode(tree)
+			}
+
+			this.minNode = function () {
+				findMinNode(tree)
+			}
+
+			this.maxNode = function () {
+				findMaxNode(tree)
+			}
+
+			this.searchNode = function (value) {
+				findNode(tree, value)
 			}
 		}
 
@@ -90,9 +139,27 @@
 		nodes.forEach(function (node) {
 			binaryTree.createTree(node)
 		})
+
+		console.log("中序遍历：")
 		binaryTree.inOrderTraversal()
+
+		console.log("前序遍历：")
 		binaryTree.preorderTraversal()
+
+		console.log("后序遍历：")
 		binaryTree.postorderTraversal()
+
+		console.log("最小节点：")
+		binaryTree.minNode()
+
+		console.log("最大节点：")
+		binaryTree.maxNode()
+
+		console.log("查找节点3：")
+		binaryTree.searchNode(3)
+
+		console.log("查找节点5：")
+		binaryTree.searchNode(5)
 	</script>
 </body>
 </html>

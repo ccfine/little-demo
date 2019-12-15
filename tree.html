@@ -48,16 +48,16 @@
 			var preorderTraversalNode = function (node) {
 				if (node !== null) {
 					console.log(node.value)
-					inOrderTraversalNode(node.left)
-					inOrderTraversalNode(node.right)
+					preorderTraversalNode(node.left)
+					preorderTraversalNode(node.right)
 				}
 			}
 
 			//后序遍历
 			var postorderTraversalNode = function (node) {
 				if (node !== null) {
-					inOrderTraversalNode(node.left)
-					inOrderTraversalNode(node.right)
+					postorderTraversalNode(node.left)
+					postorderTraversalNode(node.right)
 					console.log(node.value)
 				}
 			}
